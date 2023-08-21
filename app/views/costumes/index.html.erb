@@ -1,0 +1,16 @@
+<h1>Costumes a Marseille</h1>
+<div class="container">
+      <div class="cards__index">
+  <% @costumes.each do |costume| %>
+        <div class="card-infos">
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" class="card-image" />
+          <div>
+            <h2><%= costume.name %></h2>
+            <p> <%= costume.description %> </p>
+          <h2 class="card-pricing"><%= costume.price %></h2>
+          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-user avatar-bordered" />
+          </div>
+        </div>
+  <% end %>
+      </div>
+</div>

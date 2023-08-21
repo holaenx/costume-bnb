@@ -9,6 +9,8 @@ gem "rails", "~> 7.0.7"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
+gem 'faker'
+
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
 
@@ -47,6 +49,8 @@ gem "sassc-rails"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
+
+gem 'faker'
 
 gem "bootstrap", "~> 5.2"
 gem "devise"
