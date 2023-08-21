@@ -1,0 +1,6 @@
+<h1>Create your costume offer</h1>
+<%= simple_form_for [@costume,@rent] do |f| %>
+  <%= f.input :begin_date %>
+  <%= f.input :end_date%>
+  <%= f.submit %>
+<% end %>

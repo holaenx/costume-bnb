@@ -1,0 +1,30 @@
+<div class="container d-flex">
+<h1><%= @costume.name  %></h1>
+<div class="card-trip">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+  <div class="card-trip-infos">
+    <div>
+      <h2><%= @costume.name  %></h2>
+      <p><%= @costume.description  %></p>
+      <p><%= @costume.city  %></p> <p><%= @costume.size  %></p>
+    </div>
+    <h2 class="card-trip-pricing"><%= @costume.price  %></h2>
+    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered"/>
+  </div>
+   <button class="primary">Reserver</button> <%#link_to "reserver", new_rent_path(@costume) a remplacer quand crée%>
+</div>
+ <button class="success"> <%= link_to "Retour", root_path(@costume) %></button>
+</div>
+<%#
+<div class="container d-flex">
+<div class="row align-items-start">
+  <% pics = @costume.photos %>
+  <%# <% pics.each do |photo| %>
+     <%# <% <div class="col"> %>
+        <%# <%= @costume.photo  %>
+        <%# </div> %>
+  <%# <% end %>
+
+    </div>
+
+</div>
