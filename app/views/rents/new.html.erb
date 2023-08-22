@@ -1,6 +1,9 @@
 <div class="container d-flex">
   <div class="d-flex justify-content-space-between">
     <h1>Rent for <%= @costume.name %></h1>
+    <%  @costume.photos.each do |photo|  %>
+      <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+    <% end %>
     <p><%= @costume.description %></p>
     <p><%= @costume.price %> €/day</p>
     <%= simple_form_for [@costume,@rent] do |f| %>

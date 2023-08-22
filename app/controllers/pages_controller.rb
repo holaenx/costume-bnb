@@ -6,7 +6,11 @@ class PagesController < ApplicationController
   end
 
   def profile
-    @user = current_user
+    @rents = current_user.rents
     @costumes = current_user.costumes
   end
+
+  # def params_rent
+  #   params.require(:costume).permit(:rent_id, :id)
+  # end
 end
