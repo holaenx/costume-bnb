@@ -9,8 +9,17 @@ class RentsController < ApplicationController
     @rent = Rent.new(rent_params)
     @rent.user = current_user
     @rent.costume = @costume
-    @rent.save!
-    redirect_to costume_path(@costume)
+      if @rent.save!
+        redirect_to profile_path(current_user)
+      else
+        redirect_to new_costume_rent_path(@costume)
+      end
+  end
+
+  def destroy
+    @rent = Rent.find(params[:id])
+    @rent.destroy
+    redirect_to profile_path, status: :see_other
   end
 
   private
