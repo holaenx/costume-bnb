@@ -5,7 +5,7 @@
         <div class="card-infos">
         <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" class="card-image" />
           <div>
-            <h2><%= costume.name %></h2>
+            <h2><%= link_to costume.name, costume_path(costume) %></h2>
             <p> <%= costume.description %> </p>
           <h2 class="card-pricing"><%= costume.price %></h2>
           <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-user avatar-bordered" />
@@ -14,3 +14,4 @@
   <% end %>
       </div>
 </div>
+<%# ajouter : link_to "Retour", root_path inside a button %>
