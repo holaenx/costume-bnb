@@ -82,3 +82,4 @@ group :test do
   gem "webdrivers"
 end
 gem "faker"
+gem "cloudinary"
