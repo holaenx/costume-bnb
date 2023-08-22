@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
   get "profile", to: "pages#profile"
   resources :costumes do
-    resources :rents, only: [:create, :update, :new]
+    resources :rents, only: [:create, :update, :new, :destroy]
   end
   resources :rents, only: :destroy
 end
