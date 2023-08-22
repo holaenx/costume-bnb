@@ -14,10 +14,10 @@
       <h2 class="card-trip-pricing"><%= @costume.price  %></h2>
       <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered"/>
     </div>
-    <button class="primary justify-content-left"><%= link_to "User's Profile", costume_path(@costume)  %></button>
+    <button class="primary justify-content-left"><%= link_to "User's Profile", user_id_path(@costume.user)  %></button>
   </div>
   <div class="button">
-    <button class="success"> <%= link_to "Retour", root_path(@costume) %></button>
+    <button class="success"> <%= link_to "Retour", costumes_path %></button>
   </div>
 </div>
   <%#
