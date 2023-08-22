@@ -8,6 +8,4 @@ class PagesController < ApplicationController
     @user = current_user
     @costumes = current_user.costumes
   end
-
-
 end

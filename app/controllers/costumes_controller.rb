@@ -36,11 +36,9 @@ class CostumesController < ApplicationController
     redirect_to costumes_path, status: :see_other
   end
 
-
-
   private
 
   def costume_params
-    params.require(:costume).permit(:name, :description, :price, :size, :city)
+    params.require(:costume).permit(:name, :description, :price, :size, :city, photos: [])
   end
 end

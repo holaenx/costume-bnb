@@ -1,27 +1,25 @@
 <div class="container d-flex">
-
-<div class="card-trip">
-  <div class="costume">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-  </div>
-  <div class="card-trip-infos">
-    <div>
-      <h2><%= @costume.name  %></h2>
-      <p>Description: <%= @costume.description  %></p>
-      <p>Ville: <%= @costume.city  %></p> <p>Taille: <%= @costume.size  %></p>
-
+  <div class="card-trip">
+    <div class="costume">
+      <%  @costume.photos.each do |photo| %>
+      <%= cl_image_tag photo.key, width: 400 %>
+      <% end %>
     </div>
-    <h2 class="card-trip-pricing"><%= @costume.price  %></h2>
-    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered"/>
+    <div class="card-trip-infos">
+      <div>
+        <h2><%= @costume.name  %></h2>
+        <p>Description: <%= @costume.description  %></p>
+        <p>Ville: <%= @costume.city  %></p> <p>Taille: <%= @costume.size  %></p>
+      </div>
+      <h2 class="card-trip-pricing"><%= @costume.price  %></h2>
+      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered"/>
+    </div>
+    <button class="primary justify-content-left"><%= link_to "User's Profile", costume_path(@costume)  %></button>
   </div>
-  <button class="primary justify-content-left"><%= link_to "User's Profile", costume_path(@costume)  %></button>
+  <div class="button">
+    <button class="success"> <%= link_to "Retour", root_path(@costume) %></button>
+  </div>
 </div>
-
-<div class="button">
-<button class="success"> <%= link_to "Retour", root_path(@costume) %></button>
-</div>
-</div>
-
   <%#
   <div class="container d-flex">
   <div class="row align-items-start">
@@ -31,11 +29,10 @@
           <%# <%= @costume.photo  %>
           <%# </div> %>
     <%# <% end %>
-  <div class="d-flex justify-content-center">
-      <button class="primary"><%= link_to "Reserver", new_costume_rent_path(@costume) %></button>
-      <button class="primary"><%= link_to "Edit your costume" , edit_costume_path(@costume) %></button>
-      <button class="alert"><%= link_to "Delete",
-            costume_path(@costume),
-            data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></button>
-  </div>
+<div class="d-flex justify-content-center">
+    <button class="primary"><%= link_to "Reserver", new_costume_rent_path(@costume) %></button>
+    <button class="primary"><%= link_to "Edit your costume" , edit_costume_path(@costume) %></button>
+    <button class="primary"><%= link_to "Delete",
+          costume_path(@costume),
+          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></button>
 </div>
