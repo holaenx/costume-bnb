@@ -4,6 +4,7 @@
 
 .container{
   display: flex;
+  size: 100%;
   justify-content: space-evenly;
 }
 .cards__index {
@@ -20,6 +21,7 @@
   right: 16px;
   top: -20px;
 }
+
 .card-infos {
   position: relative;
 }
