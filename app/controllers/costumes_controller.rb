@@ -1,6 +1,13 @@
 class CostumesController < ApplicationController
   def index
     @costumes = Costume.all
+    @markers = @costumes.geocoded.map do |costume|
+      {
+        lat: costume.latitude,
+        lng: costume.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {costume: costume})
+      }
+    end
   end
 
   def show
