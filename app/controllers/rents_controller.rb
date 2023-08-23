@@ -10,6 +10,7 @@ class RentsController < ApplicationController
     @rent.user = current_user
     @rent.costume = @costume
     if @rent.save!
+      flash[:notice] = "Rent successfully created"
       redirect_to profile_path(current_user)
     else
       redirect_to new_costume_rent_path(@costume)
