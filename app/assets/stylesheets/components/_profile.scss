@@ -1,0 +1,10 @@
+.complete {
+  margin-top: 20px;
+}
+
+.collection {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 16px;
+  padding: 16px;
+}
