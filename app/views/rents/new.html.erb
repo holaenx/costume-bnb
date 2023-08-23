@@ -10,6 +10,9 @@
       <%= f.input :begin_date %>
       <%= f.input :end_date%>
       <%= f.submit%>
+      <% if flash[:notice] %>
+        <div class="notice"><%= flash[:notice] %></div>
+      <% end %>
       <% end %>
     </div>
 </div>
