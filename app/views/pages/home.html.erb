@@ -1,7 +1,7 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.bayonne.fr/fileadmin/_processed_/3/d/csm_Bayonne-_F%C3%AAtes_et_costumes__4__85ecaff821.jpg);">
-  <div class="container">
+  <div class="container2">
     <h1>Costumes BNB</h1>
-    <p>Bienvenue sur Costumes BNB, LE site pour louer les meilleurs costumes.</p>
+    <p>Costumes BNB, THE website to rent a cool costume.</p>
   </div>
 </div>
 <div class="search d-flex justify-content-between">
@@ -15,15 +15,16 @@
     </button>
   </div>
 </div>
-<div class="cards__index">
+<div class="cards__index2">
   <% @costumes.first(16).each do |costume| %>
-        <div class="card-infos">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" class="card-image" />
+        <div class="card-infos2">
+    <%= cl_image_tag costume.photos.first.key, class: "card-image2", crop: :fill %>
+
           <div>
             <h2><%= link_to costume.name, costume_path(costume) %></h2>
             <p> <%= costume.description %> </p>
           <h2 class="card-pricing"><%= costume.price %></h2>
-          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-user avatar-bordered" />
+          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-user2 avatar-bordered" />
           </div>
         </div>
 

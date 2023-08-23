@@ -3,25 +3,28 @@
 @import "show";
 
 .container{
-  display: flex;
   size: 100%;
-  justify-content: space-evenly;
-}
-.cards__index {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 16px;
-  padding: 16px;
+}
+.cards__index {
+  width: 350px;
+  height: 350px;
+  display: flex;
+  justify-content: space-around;
+  padding: 30px;
 }
 .card-image {
-  width: 350px;
+  width: 250px;
+  height: 300px
 }
 .card-user {
   position: absolute;
-  right: 16px;
-  top: -20px;
+  right: 30px;
+  top: 300px;
 }
 
 .card-infos {
+  width: 200px;
   position: relative;
 }
