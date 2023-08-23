@@ -18,7 +18,8 @@
 <div class="cards__index">
   <% @costumes.first(16).each do |costume| %>
         <div class="card-infos">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" class="card-image" />
+    <%= cl_image_tag costume.photos.first.key, class: "card-image" %>
+
           <div>
             <h2><%= link_to costume.name, costume_path(costume) %></h2>
             <p> <%= costume.description %> </p>
