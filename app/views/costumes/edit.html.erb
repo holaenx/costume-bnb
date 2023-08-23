@@ -1,10 +1,14 @@
 <h1>Modify your Costume offer</h1>
+
+<% @costume.photos.each do |photo| %>
+<%= cl_image_tag photo.key, width: 350, crop: :fill %>
+<% end %>
 <%= simple_form_for @costume do |f| %>
   <%= f.input :name %>
   <%= f.input  :description%>
-  <%= f.input :size, placeholder:"XS,S,M,L,XL,XXL"%>
+  <%= f.input :size, :collection => %w[XS S L XL XXL] %>
   <%= f.input  :city%>
   <%= f.input :price %>
   <%= f.submit%>
 <% end %>
-<button><%= link_to "Retour au costume", costume_path(@costume)  %></button>
+<button><%= link_to "Back to Costume", costume_path(@costume)  %></button>

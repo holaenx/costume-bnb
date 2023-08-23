@@ -17,7 +17,7 @@
     <button class="primary justify-content-left"><%= link_to "User's Profile", user_id_path(@costume.user)  %></button>
   </div>
   <div class="button">
-    <button class="success"> <%= link_to "Retour", costumes_path %></button>
+    <button class="success"> <%= link_to "Back", costumes_path %></button>
   </div>
 </div>
   <%#
@@ -30,7 +30,7 @@
           <%# </div> %>
     <%# <% end %>
 <div class="d-flex justify-content-center">
-    <button class="primary"><%= link_to "Reserver", new_costume_rent_path(@costume) %></button>
+    <button class="primary"><%= link_to "Rent", new_costume_rent_path(@costume) %></button>
     <button class="primary"><%= link_to "Edit your costume" , edit_costume_path(@costume) %></button>
     <button class="primary"><%= link_to "Delete",
           costume_path(@costume),

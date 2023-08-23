@@ -2,30 +2,36 @@
 <p>Hello <%= current_user.email %></p>
 
 <div class="container">
-  <h2>Your costumes</h2>
-  <% @costumes.first(10).each do |costume|%>
-    <%= costume.name %>
-  <%end %>
-</div>
+<h2>Your costumes</h2>
+
+
     <div class="container d-flex">
-    <ul>
+
       <% @rents.each do |rent| %>
         <div class="card d-flex">
-          <li>
-            <% rent.costume.photos.each do |photo| %>
-              <% @rented_costume = rent.costume %>
-              <% if @rented_costume.photos.attached? %>
-                <%= cl_image_tag photo.key, width: 200, crop: :fill %>
-              <% end %>
-              <p>Du <%=  rent.begin_date %></p>
-              <p>Au  <%=  rent.end_date %></p>
-               <button class="primary">
-                <%= link_to "Delete", profile_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
-              </button>
-            </div>
-            <% end %>
+        <% rent.costume.photos.each do |photo| %>
+          <% @rented_costume = rent.costume %>
+          <% if @rented_costume.photos.attached? %>
+            <%= cl_image_tag photo.key, width: 200, crop: :fill %>
           <% end %>
-        </li>
+          <p>"Du" <%=  rent.begin_date %></p>
+          <p>"Au"  <%=  rent.end_date %>
+                  <button class="primary"><%= link_to "Delete", rent,
+          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></button>
+          </p>
+        </div>
+        <% end %>
 
-     </ul>
+       <% end %>
+
+    </div>
 </div>
+
+
+
+
+
+
+<% @costumes.first(10).each do |costume|%>
+  <%= costume.name %>
+<%end %>

@@ -10,6 +10,12 @@ class PagesController < ApplicationController
     @costumes = current_user.costumes
   end
 
+  def destroy
+    @rent = Rent.find(params[:id])
+    @rent.destroy
+    redirect_to profile_path, status: :see_other
+  end
+
   # def params_rent
   #   params.require(:costume).permit(:rent_id, :id)
   # end
