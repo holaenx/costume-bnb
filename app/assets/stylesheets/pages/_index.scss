@@ -7,23 +7,24 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
-.cards__index {
-  width: 350px;
-  height: 350px;
-  display: flex;
-  justify-content: space-around;
-  padding: 30px;
-}
-.card-image {
-  width: 250px;
-  height: 300px
-}
-.card-user {
-  position: absolute;
-  right: 30px;
-  top: 300px;
-}
-.card-infos {
-  width: 200px;
-  position: relative;
-}
+// .cards__index {
+//   width: 350px;
+//   height: 350px;
+//   display: flex;
+//   justify-content: space-around;
+//   padding: 30px;
+// }
+// .card-image {
+//   width: 200px;
+//   height: 300px
+// }
+// .card-user {
+//   position: absolute;
+//   right: 30px;
+//   top: 300px;
+// }
+
+// .card-infos {
+//   width: 200px;
+//   position: relative;
+// }

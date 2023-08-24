@@ -1,20 +1,8 @@
 .costume img {
   width: 450px;
-  margin: 40px;
-}
-
-.card-image {
-  width: 350px;
-}
-
-.card-user {
-  position: absolute;
-  right: 16px;
-  top: -20px;
-}
-
-.card-infos {
-  position: relative;
+  margin: 20px;
+  border-radius: 5%;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
 .map {
@@ -22,6 +10,19 @@
 }
 
 .card-costume {
-  background-color: white;
+  background-color: rgba(186, 192, 192, 0.562);
   padding: 5px;
+  border-radius: 5%;
+  margin-top: 15px;
+ h2 {
+  justify-content: center;
+
+ }
+}
+
+.container_show {
+  background-color: white;
+  margin: 20px;
+  padding: 20px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }

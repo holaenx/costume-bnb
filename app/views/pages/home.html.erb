@@ -1,41 +1,35 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.bayonne.fr/fileadmin/_processed_/3/d/csm_Bayonne-_F%C3%AAtes_et_costumes__4__85ecaff821.jpg);">
-  <div class="container2">
+  <div class="titres">
     <h1>Costumes BNB</h1>
     <p>Costumes BNB, THE website to rent a cool costume.</p>
   </div>
 </div>
-<div class="row justify-content-center">
-  <div class="col-sm-8 my-3">
-    <%= form_with url: root_path, method: :get, class: "d-flex" do %>
-      <%= text_field_tag :query,
-            params[:query],
-            class: "form-control",
-            placeholder: "Search your costume"
-        %>
-      <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
-    <% end %>
-  </div>
-</div>
-<div class="search d-flex justify-content-between">
-<%= link_to "Create your costume offer", new_costume_path, :class => "btn btn-ghost" %>
-
-
-
-
-
-
-<div class="cards__index2">
-  <% @costumes.first(16).each do |costume| %>
-        <div class="card-infos2">
-    <%= cl_image_tag costume.photos.first.key, class: "card-image2", crop: :fill %>
-          <div>
-            <h2><%= link_to costume.name, costume_path(costume) %></h2>
-            <p> <%= costume.description %> </p>
-          <h2 class="card-pricing"><%= costume.price %></h2>
-          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-user2 avatar-bordered" />
-          </div>
+    <div class="search d-flex ">
+        <%= link_to "Create your costume offer", new_costume_path, :class => "btn btn-ghost" %>
+        <%= simple_form_for :search, url: costumes_path, method: :get do |f| %>
+        <div class="search-form-control form-group">
+            <input class="form-control string required" type="text" name="search[query]" id="search_query" />
+            <% end %>
+            <button name="button" type="submit" class="btn btn-flat">
+              <i class="fas fa-search"></i> Search
+            </button>
         </div>
-  <% end %>
       </div>
-
+<div class="container2">
+   <% @costumes.first(16).each do |costume| %>
+       <div class="cards__index">
+          <%= cl_image_tag costume.photos.first.key, class: "card-image" %>
+            <div class="card__home">
+              <div class="descriname">
+                  <h2><%= link_to costume.name, costume_path(costume) %></h2>
+                  <p> <%= costume.description %> </p>
+                </div>
+              <div class="avaprice">
+                <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-user avatar-bordered" />
+                <h2 class="card-pricing">Price: <%= costume.price %> €/day</h2>
+              </div>
+            </div>
+        </div>
+    <% end %>
+</div>
 <%= link_to "All the costumes", costumes_path, :class => "btn btn-ghost"  %>
