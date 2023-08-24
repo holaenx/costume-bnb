@@ -1,6 +1,10 @@
 class CostumesController < ApplicationController
   def index
     @costumes = Costume.all
+    if params[:query].present?
+      query_search = "name OR description OR city ILIKE ?"
+      @costumes = @costumes.where(query_search,query: "%#{params[:query]}")
+    end
     @markers = @costumes.geocoded.map do |costume|
       {
         lat: costume.latitude,
@@ -8,6 +12,7 @@ class CostumesController < ApplicationController
         info_window_html: render_to_string(partial: "info_window", locals: {costume: costume})
       }
     end
+
   end
 
   def show
