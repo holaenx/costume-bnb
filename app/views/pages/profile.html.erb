@@ -29,6 +29,7 @@
             <div class="carte-create">
               <%= cl_image_tag costume.photos.first.key, width: 200, crop: :fill %>
               <%= costume.name %>
+                <%= link_to "Edit" , edit_costume_path(costume), :class => "btn btn-ghost"   %>
           <% end %>
       </div>
     </div>

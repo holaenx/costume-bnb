@@ -20,6 +20,9 @@ class PagesController < ApplicationController
     redirect_to profile_path, status: :see_other
   end
 
+  def edit
+
+  end
   # def params_rent
   #   params.require(:costume).permit(:rent_id, :id)
   # end

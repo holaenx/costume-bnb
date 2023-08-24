@@ -32,33 +32,9 @@
 }
 
 .container2{
-  display: flex;
-  size: 100%;
-  justify-content: space-evenly;
-}
-.cards__index2 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 16px;
-  padding: 16px;
-}
-.card-image2 {
-  width: 250px;
-  height: 300px;
-  border-radius: 30%;
-  border: 3px solid gray;
-
-.card-user2 {
-  position: absolute;
-  right: 16px;
-  top: -20px;
-}
-.card-infos2 {
-  position: relative;
-  border: 1px solid #050505;
-  border-radius: 50px;
-  font-weight: lighter;
-  opacity: 0.8;
-  justify-content: center
-}
+  size: 100%;
+  justify-content: space-evenly;
 }
