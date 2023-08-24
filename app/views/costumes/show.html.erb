@@ -15,22 +15,17 @@
       <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered"/>
     </div>
     <%= link_to "Profile", user_id_path(@costume.user), :class => "btn btn-ghost"  %>
-
-
     <%= link_to "Rent", new_costume_rent_path(@costume), :class => "btn btn-ghost"   %>
     <%= link_to "Edit" , edit_costume_path(@costume), :class => "btn btn-ghost"   %>
     <%= link_to "Delete",
           costume_path(@costume), :class => "btn btn-ghost",
           data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
           <%= link_to "Back", costumes_path, :class => "btn btn-ghost"   %>
-
-
   </div>
   <div class="map" style="width: 100%; height: 600px;"
     data-controller="map2"
     data-map2-marker-value="<%= @marker.to_json %>"
     data-map2-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-
 </div>
   <%#
   <div class="container d-flex">
