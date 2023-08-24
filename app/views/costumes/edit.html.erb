@@ -1,4 +1,6 @@
-<h1>Modify your Costume offer</h1>
+<h1>Edit your Costume offer</h1>
+<div class="container2">
+  <div class="form_container">
 <% @costume.photos.each do |photo| %>
 <%= cl_image_tag photo.key, width: 350, crop: :fill %>
 <% end %>
@@ -8,6 +10,8 @@
   <%= f.input :size, :collection => %w[XS S L XL XXL] %>
   <%= f.input  :city%>
   <%= f.input :price %>
-  <%= f.submit%>
+  <%= f.submit 'Edit my costume', :class => 'btn btn-ghost' %>
 <% end %>
-<button><%= link_to "Back to Costume", costume_path(@costume)  %></button>
+<%= link_to "Back to Costume", costume_path(@costume), :class => "btn btn-ghost"  %>
+ </div>
+</div>

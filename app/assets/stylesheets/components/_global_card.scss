@@ -1,0 +1,48 @@
+.cards__index {
+  width: 360px;
+  height: 550px;
+  background-color: rgb(255, 255, 255);
+  margin: 4px;
+  border-radius: 5%;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+.card-image {
+  width: 350px;
+  height: 290px;
+  border-radius: 5% 5% 0% 0%;
+  border: 1px rgba(233, 232, 232, 0.3);
+  margin: 5px;
+.card-user {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+}
+}
+.card__home {
+  border-radius: 0% 0% 5% 5%;
+  height: 250px;
+  padding: 10px;
+  font-weight: lighter;
+  opacity: 0.8;
+  justify-content: center ;
+  background-color: rgba(186, 192, 192, 0.562);
+  a { text-decoration: none;
+    color: black;
+  }
+  a:hover {
+    color:rgba(0, 0, 0, 0.354);
+  }
+}
+.card-pricing{
+  // position: absolute;
+  // left: 200px;
+  // top: -20px;
+}
+.avaprice {
+  display: flex;
+  justify-content: space-between;
+}
+.descriname {
+  height: 180px;
+  width: 350px;
+}
