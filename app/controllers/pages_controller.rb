@@ -4,8 +4,7 @@ class PagesController < ApplicationController
   def home
     @costumes = Costume.all
     if params[:query].present?
-      query_search = "name OR description OR city ILIKE ?"
-      @costumes = @costumes.where(query_search, query: "%#{params[:query]}")
+      @costumes = Costume.global_search(params[:query])
     end
   end
 
