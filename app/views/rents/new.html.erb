@@ -1,24 +1,28 @@
-<div class="container d-flex">
-  <div class="d-flex justify-content-space-between">
-    <h1>Rent for <%= @costume.name %></h1>
-    <%  @costume.photos.each do |photo|  %>
-      <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-    <% end %>
-    <p><%= @costume.description %></p>
-    <p><%= @costume.price %> €/day</p>
-    <%= simple_form_for [@costume,@rent] do |f| %>
-      <%= f.input :begin_date %>
-      <%= f.input :end_date%>
-      <% if flash[:notice] %>
-        <div class="notice"><%= flash[:notice] %></div>
-      <%= f.submit%>
-      <% end %>
-      <% end %>
+<div class="container d-flex justify-content-center">
+    <div class="1">
+        <h1><strong>Rent for <%= @costume.name %></strong></h1>
+        <%  @costume.photos.each do |photo|  %>
+          <%= cl_image_tag photo.key, width: 400, height: 600, crop: :fit %>
+        <% end %>
+        <div class="card_edit">
+            <p><%= @costume.description %></p>
+            <p>Get your Costume for : <strong> <%= @costume.price %></strong> €/day</p>
+        </div>
     </div>
+        <div class="form_container">
+        <h2><strong>Because with BNB Costumes...</strong></h2>
+        <p>...it's the easiest and fastest way to get your Costume in time!</p>
+        <%= image_tag "https://e7.pngegg.com/pngimages/650/516/png-clipart-suit-computer-icons-scalable-graphics-suit-tshirt-logo.png", width: 300, height: 300 %>
+            <%= simple_form_for [@costume,@rent] do |f| %>
+              <%= f.input :begin_date %>
+              <%= f.input :end_date%>
+              <%= f.submit "Rent Costume", :class => "btn btn-ghost" %>
+              <% end %>
+        </div>
 </div>
 <%# <div class="card">
 <% price_in_days = (@rent.end_date - @rent.begin_date).to_i %>
 <%# <% price = @costume.price * price_in_days %>
 <%# <%= "You rent for #{price_in_days} days, cost #{price}"  %>
 <%# </div> %>
-<%= link_to "Back", costume_path(@costume)  %>
+<%= link_to "Back", costume_path(@costume), :class => "btn btn-ghost" %>
