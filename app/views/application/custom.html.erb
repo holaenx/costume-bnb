@@ -4,6 +4,7 @@
 <div class="container">
 <h2>His costumes</h2>
 <% @costumes.first(10).each do |costume|%>
+  <%= cl_image_tag costume.photos.first.key, width: 200, crop: :fill %>
   <%= costume.name %>
 <%end %>
 

@@ -1,40 +1,43 @@
-
-<div class="container">
-  <div>
-    <h1>Your profile</h1>
-    <p>Hello <%= current_user.email %>!</p>
-  </div>
-    <div class="cards">
-      <div>
-        <h2>Your rented costumes</h2>
-        <% @rents.each do |rent| %>
-          <div class="card">
-            <% rent.costume.photos.each do |photo| %>
-              <% @rented_costume = rent.costume %>
-                <% if @rented_costume.photos.attached? %>
-                  <%= cl_image_tag photo.key, width: 200, crop: :fill %>
-                <% end %>
-                <p>"Du" <%=  rent.begin_date %></p>
-                <p>"Au"  <%=  rent.end_date %> </p>
-                <p>
-                <button class="btn btn-ghost"><%= link_to "Delete", rent,
-                data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></button>
-                </p>
-            <% end %>
-          </div>
-        <% end %>
-      </div>
-      <div>
-        <h2>Your costumes</h2>
-          <% current_user.costumes.each do |costume| %>
-            <div class="card">
-              <%= cl_image_tag costume.photos.first.key, width: 200, crop: :fill %>
-              <%= costume.name %>
-          <% end %>
-      </div>
+<div class="complete">
+  <div class="bar">
+    <div class="centered-text">
+      <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "user-pic" %>
+      <h2>Your profile</h2>
+      <p>Hello <%= current_user.email %>!</p>
     </div>
-</div>
+  </div>  <!-- bar -->
 
-<%# <% @costumes.first(10).each do |costume|%>
-  <%# <%= costume.name %>
-<%# <%end %>
+  <div class="cos">
+      <div class="rented-cos">
+          <h2>Your rented costumes</h2>
+        <div class="cos-card-rent">
+          <% @rents.each do |rent| %>
+            <div class="cos-method">
+              <% rent.costume.photos.each do |photo| %>
+                <% @rented_costume = rent.costume %>
+                <% if @rented_costume.photos.attached? %>
+                  <div class="cos-image">
+                    <%= cl_image_tag photo.key, width: 200, height:200, crop: :fill %>
+                  </div> <!-- "cos-image" -->
+                <% end %>
+                <p>"Du"<%=rent.begin_date%></p>
+                <p>"Au"<%=rent.end_date%></p>
+                <%= link_to "Delete", rent, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: 'btn btn-ghost' %>
+              <% end %>
+            </div> <!-- "cos-image" -->
+          <% end %>
+        </div> <!-- classless -->
+      <div class="my-cos">
+          <h2>Your costumes</h2>
+        <div class="cos-card-my">
+              <% current_user.costumes.each do |costume| %>
+                <div class="">
+                  <%= cl_image_tag costume.photos.first.key, width: 200, height:200,crop: :fill %>
+                  <%= costume.name %>
+                </div> <!-- string vide -->
+              <% end %>
+        </div>
+      </div> <!-- my-cos -->
+      </div> <!-- rented-cos -->
+  </div> <!-- cos -->
+</div> <!-- complete -->

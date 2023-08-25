@@ -1,0 +1,101 @@
+
+.complete {
+  display: flex;
+  height: 100vh;
+  justify-content: space-evenly;
+}
+
+.bar {
+  width: 20%;
+  background-color: #d8d8d8;
+  color: #333;
+  padding: 50px;
+  // background-color: white;
+  // padding: 50px;
+  // flex: 20;
+}
+
+.user-pic {
+  width: 150px;
+  border-radius: 50%;
+}
+
+.centered-text{
+  text-align: center;
+}
+
+.cos {
+  // display: flex;
+  // flex: 60;
+  width: 80%;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+
+
+}
+
+.rented-cos {
+  // flex: 1;
+}
+
+.cos-card-rent {
+  display: flex;
+}
+
+.cos-method{
+  // width: 200px;
+  // height: 300px;
+  // flex: 1;
+  background-color: rgb(255, 255, 255);
+  margin: 4px;
+  border-radius: 5%;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.cos-image{
+
+}
+
+.my-cos {
+
+}
+
+.cos-card-my {
+  display: flex;
+}
+
+// .complete {
+//   display: flex;
+//   height: 100vh;
+// }
+
+// .bar {
+//   width: 20%;
+//   background-color: #333;
+//   color: white;
+//   padding: 20px;
+// }
+
+// .cos {
+//   width: 80%;
+//   padding: 20px;
+//   display: flex;
+//   flex-wrap: wrap;
+//   gap: 20px;
+// }
+
+// .rented-cos {
+//   flex: 1;
+//   background-color: #f4f4f4;
+//   border: 1px solid #ccc;
+//   padding: 10px;
+// }
+
+// .my-cos {
+//   flex: 1;
+//   background-color: #f4f4f4;
+//   border: 1px solid #ccc;
+//   padding: 10px;
+// }
