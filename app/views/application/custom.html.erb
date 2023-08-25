@@ -3,12 +3,10 @@
 
 <div class="container">
 <h2>His costumes</h2>
-<%  %>
-     <% @user.costumes.each do |costume| %>
-            <div class="carte-create">
-              <%= cl_image_tag costume.photos.first.key, width: 200, crop: :fill %>
-              <%= costume.name %>
-          <% end %>
+<% @costumes.first(10).each do |costume|%>
+  <%= cl_image_tag costume.photos.first.key, width: 200, crop: :fill %>
+  <%= costume.name %>
+<%end %>
 
 <%# les rents qu'on lui à demandé %>
 

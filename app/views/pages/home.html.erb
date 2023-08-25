@@ -4,7 +4,6 @@
     <p>Costumes BNB, THE website to rent a cool costume.</p>
   </div>
 </div>
-
     <div class="search d-flex justify-content-between">
 <%= link_to "Create your costume offer", new_costume_path, :class => "btn btn-ghost" %>
        <div class="search-placement">
@@ -26,7 +25,6 @@
               <div class="descriname">
                   <h2><%= link_to costume.name, costume_path(costume) %></h2>
                   <p> <%= costume.description %> </p>
-                </div>
               <div class="avaprice">
                 <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-user avatar-bordered" />
                 <h2 class="card-pricing">Price: <%= costume.price %> €/day</h2>
