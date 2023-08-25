@@ -36,3 +36,13 @@
   size: 100%;
   justify-content: space-evenly;
 }
+.container3{
+  display: grid;
+  grid-gap: 16px;
+  size: 100%;
+  justify-content: space-evenly;
+}
+
+.search-placement {
+  justify-content: space-between !important;
+}
