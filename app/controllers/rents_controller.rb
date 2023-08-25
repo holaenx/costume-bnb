@@ -25,6 +25,13 @@ class RentsController < ApplicationController
 
   def edit
     @rent = Rent.find(params[:id])
+    @costume = @rent.costume.id
+  end
+
+  def update
+    @rent = Rent.find(params[:id])
+    @rent.update(rent_params)
+    redirect_to profile_path
   end
 
   private

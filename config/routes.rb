@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get "profile", to: "pages#profile"
   get "/users/:id", to: "application#custom", as: :user_id
   resources :costumes do
-    resources :rents, only: [:create, :update, :new, :destroy, :edit]
+    resources :rents, only: [:create, :new, :destroy]
   end
-  resources :rents, only: :destroy
+  resources :rents, only: [:destroy, :update, :edit]
 end
