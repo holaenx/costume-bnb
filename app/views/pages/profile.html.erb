@@ -16,12 +16,16 @@
               <% rent.costume.photos.each do |photo| %>
                 <% @rented_costume = rent.costume %>
                 <% if @rented_costume.photos.attached? %>
+                  <%=link_to costume_path(rent.costume) do  %>
                   <div class="cos-image">
-                    <%= cl_image_tag photo.key, width: 200, height:200, crop: :fill %>
+                    <%= cl_image_tag photo.key, width: 210, height:200, crop: :fill, class: "rounded-borders"%>
                   </div> <!-- "cos-image" -->
                 <% end %>
-                <p>"Du"<%=rent.begin_date%></p>
-                <p>"Au"<%=rent.end_date%></p>
+               	<h5 ><%= rent.costume.name %></h5>
+                <p>Du <%=rent.begin_date%></p>
+                <p>Au <%=rent.end_date%></p>
+                <% end %>
+                <%= link_to "Edit", edit_costume_path(rent), class: 'btn btn-ghost' %>
                 <%= link_to "Delete", rent, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: 'btn btn-ghost' %>
               <% end %>
             </div> <!-- "cos-image" -->
@@ -31,13 +35,18 @@
           <h2>Your costumes</h2>
         <div class="cos-card-my">
               <% current_user.costumes.each do |costume| %>
-                <div class="">
-                  <%= cl_image_tag costume.photos.first.key, width: 200, height:200,crop: :fill %>
-                  <%= costume.name %>
-                </div> <!-- string vide -->
+                <div class="cos-method">
+                  <%=link_to costume_path(costume) do  %>
+                    <%= cl_image_tag costume.photos.first.key, width: 210, height:200,crop: :fill, class: "rounded-borders"%>
+                  <% end %>
+                  <h5><%= costume.name %></h5>
+                  <%= link_to "Edit", edit_costume_path(costume), class: 'btn btn-ghost' %>
+                </div> <!-- cos-method -->
               <% end %>
         </div>
       </div> <!-- my-cos -->
       </div> <!-- rented-cos -->
   </div> <!-- cos -->
 </div> <!-- complete -->
+
+                <%# <%= link_to "Edit", edit_costume_rent_path(rent), class: 'btn btn-ghost' %>

@@ -1,14 +1,26 @@
-<h1>His profile</h1>
-<p>Hello <%= @user.email %></p>
+<div class="complete">
+  <div class="bar">
+        <div class="centered-text">
+          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "user-pic" %>
+          <h2>Costumes by</h2>
+          <p> <%= @user.email %></p>
+        </div>
+  </div>  <!-- bar -->
 
-<div class="container">
-<h2>His costumes</h2>
-<% @costumes.first(10).each do |costume|%>
-  <%= cl_image_tag costume.photos.first.key, width: 200, crop: :fill %>
-  <%= costume.name %>
-<%end %>
-
-<%# les rents qu'on lui à demandé %>
-
-
+    <div class="cos">
+      <div class="my-cos">
+        <h2>Costumes in rent</h2>
+        <div class="cos-card-my">
+          <% @costumes.first(10).each do |costume|%>
+            <div class="cos-method">
+              <%=link_to costume_path(costume) do  %>
+                <%= cl_image_tag costume.photos.first.key, width: 210, height:200,crop: :fill, class: "rounded-borders"%>
+              <% end %>
+              <h5><%= costume.name %></h5>
+            </div> <!-- cos-method -->
+          <% end %>
+        </div>
+      </div> <!-- my-cos -->
+    </div>
+  </div>
 </div>
