@@ -1,0 +1,17 @@
+<h1>Modify your costume rent date</h1>
+<div class="container3">
+  <div class="form_container">
+  <div class="image-form">
+<% @rent.costume.photos.each do |photo| %>
+<%= cl_image_tag photo.key, width: 350, crop: :fill %>
+</div>
+<% end %>
+<%= simple_form_for(@rent) do |f| %>
+  <%= f.input :begin_date %>
+  <%= f.input :end_date%>
+  <%= f.submit "Edit Rent", :class => "btn btn-ghost btn-form" %>
+
+<% end %>
+<%= link_to "Back to Costume", profile_path, :class => "btn btn-ghost"  %>
+ </div>
+</div>
