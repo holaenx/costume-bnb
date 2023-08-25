@@ -20,11 +20,12 @@
 <div class="container2">
    <% @costumes.first(16).each do |costume| %>
        <div class="cards__index">
-          <%= cl_image_tag costume.photos.first.key, class: "card-image" %>
+          <%= cl_image_tag costume.photos.first.key, crop: :pad,class: "card-image" %>
             <div class="card__home">
               <div class="descriname">
                   <h2><%= link_to costume.name, costume_path(costume) %></h2>
                   <p> <%= costume.description %> </p>
+                </div>
               <div class="avaprice">
                 <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-user avatar-bordered" />
                 <h2 class="card-pricing">Price: <%= costume.price %> €/day</h2>

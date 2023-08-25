@@ -2,11 +2,41 @@
   width: 400px;
   border-radius: 0% 0% 5% 5%;
   height: 250px;
-  padding: 10px;
-  font-weight: lighter;
+  padding: 15px 35px 15px 35px;
   opacity: 0.8;
-  background-color: rgba(186, 192, 192, 0.562);
+  background-color: rgba(213, 219, 219, 0.342);
   p {
     font-size: 24px;
   }
+  margin: 15px 15px 15px 45px;
+}
+
+.edit_center {
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+#logo {
+  padding-right: 30px !important;
+}
+
+.container_form {
+ display: flex;
+ justify-content: space-between;
+ margin: 50px;
+ padding: 0 300px 0 300px;
+ background-color: #f4f4f4c7;
+}
+
+.h2rent {
+  padding: 10px;
+}
+
+.img_center {
+  padding-right: 130px;
+  padding-left: 20px;
+
+}
+
+.btn-form {
+margin-left:  150px;
 }
