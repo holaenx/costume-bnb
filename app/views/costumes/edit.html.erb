@@ -2,8 +2,10 @@
 <h1>Modify your Costume offer</h1>
 <div class="container3">
   <div class="form_container">
+  <div class="image-form">
 <% @costume.photos.each do |photo| %>
 <%= cl_image_tag photo.key, width: 350, crop: :fill %>
+</div>
 <% end %>
 <%= simple_form_for @costume do |f| %>
   <%= f.input :name %>
