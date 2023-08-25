@@ -23,6 +23,10 @@ class RentsController < ApplicationController
     redirect_to profile_path, status: :see_other
   end
 
+  def edit
+    @rent = Rent.find(params[:id])
+  end
+
   private
 
   def rent_params

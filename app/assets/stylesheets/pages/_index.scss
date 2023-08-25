@@ -3,11 +3,24 @@
 @import "show";
 @import "profile";
 @import "rent_new";
-.container{
+.container2{
   size: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin: 40px;
 }
+
+.mappy {
+  margin: 60px;
+}
+
+.indextitle {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+
 
 // .cards__index {
 //   width: 350px;
@@ -30,4 +43,3 @@
 //   width: 200px;
 //   position: relative;
 // }
-

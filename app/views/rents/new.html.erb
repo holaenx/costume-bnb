@@ -1,23 +1,27 @@
-<div class="container d-flex justify-content-center">
-    <div class="1">
-        <h1><strong>Rent for <%= @costume.name %></strong></h1>
+<div class="container_form">
+  <div class="edit_center">
+    <div class="costume">
+        <h2><strong>Rent for <%= @costume.name %></strong></h2>
         <%  @costume.photos.each do |photo|  %>
           <%= cl_image_tag photo.key, width: 400, height: 600, crop: :fit %>
         <% end %>
+    </div>
         <div class="card_edit">
             <p><%= @costume.description %></p>
-            <p>Get your Costume for : <strong> <%= @costume.price %></strong> €/day</p>
+            <p>  <strong>Get your Costume for : <%= @costume.price %>€/day</strong> </p>
         </div>
-    </div>
+  </div>
         <div class="form_container">
-        <h2><strong>Because with BNB Costumes...</strong></h2>
-        <p>...it's the easiest and fastest way to get your Costume in time!</p>
-        <%= image_tag "https://e7.pngegg.com/pngimages/650/516/png-clipart-suit-computer-icons-scalable-graphics-suit-tshirt-logo.png", width: 300, height: 300 %>
-            <%= simple_form_for [@costume,@rent] do |f| %>
-              <%= f.input :begin_date %>
-              <%= f.input :end_date%>
-              <%= f.submit "Rent Costume", :class => "btn btn-ghost" %>
-              <% end %>
+          <h2 class="h2rent"><strong>Because with BNB Costumes...</strong></h2>
+          <div class="img_center">
+            <p id="logo" ><%= image_tag "logo.png", width: 450, height: 350%></p>
+          </div>
+          <p>...it's the easiest and fastest way to get your Costume in time!</p>
+              <%= simple_form_for [@costume,@rent] do |f| %>
+                <%= f.input :begin_date %>
+                <%= f.input :end_date%>
+                <%= f.submit "Rent Costume", :class => "btn btn-ghost btn-form" %>
+                <% end %>
         </div>
 </div>
 <%# <div class="card">
