@@ -1,31 +1,35 @@
-<div class="container d-flex">
+<div class="container_show d-flex">
   <div class="card-trip">
-    <div class="costume">
-      <%  @costume.photos.each do |photo| %>
-      <%= cl_image_tag photo.key, width: 400 %>
-      <% end %>
+          <div class="costume">
+            <%  @costume.photos.each do |photo| %>
+            <%= cl_image_tag photo.key, width: 400 %>
+            <% end %>
+          </div>
+          <div class="d-flex justify-content-center">
+              <%= link_to "Profile", user_id_path(@costume.user), :class => "btn btn-ghost"  %>
+              <%= link_to "Rent", new_costume_rent_path(@costume), :class => "btn btn-ghost"   %>
+              <%= link_to "Delete",
+                    costume_path(@costume), :class => "btn btn-ghost",
+                    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+                    <%= link_to "Back", costumes_path, :class => "btn btn-ghost"   %>
+          </div>
+        <div class="card-costume">
+            <div>
+              <h2><strong><%= @costume.name  %></strong></h2>
+              <p><strong>Description: </strong> <%= @costume.description  %></p>
+              <p><strong>City: </strong><%= @costume.city  %></p> <p><strong>Size: </strong><%= @costume.size  %></p>
+            </div>
+            <div class="avaprice">
+                <h2 class="card-trip-pricing"><%= @costume.price  %>€/Day</h2>
+                <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered"/>
+            </div>
+        </div>
     </div>
-    <div class="card-costume">
-      <div>
-        <h2><%= @costume.name  %></h2>
-        <p>Description: <%= @costume.description  %></p>
-        <p>City: <%= @costume.city  %></p> <p>Size: <%= @costume.size  %></p>
-      </div>
-      <h2 class="card-trip-pricing"><%= @costume.price  %>€/Day</h2>
-      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered"/>
+    <div class="map" style="width: 100%; height: 948px;"
+      data-controller="map2"
+      data-map2-marker-value="<%= @marker.to_json %>"
+      data-map2-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
-    <%= link_to "Profile", user_id_path(@costume.user), :class => "btn btn-ghost"  %>
-    <%= link_to "Rent", new_costume_rent_path(@costume), :class => "btn btn-ghost"   %>
-    <%= link_to "Edit" , edit_costume_path(@costume), :class => "btn btn-ghost"   %>
-    <%= link_to "Delete",
-          costume_path(@costume), :class => "btn btn-ghost",
-          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
-          <%= link_to "Back", costumes_path, :class => "btn btn-ghost"   %>
-  </div>
-  <div class="map" style="width: 100%; height: 600px;"
-    data-controller="map2"
-    data-map2-marker-value="<%= @marker.to_json %>"
-    data-map2-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 </div>
   <%#
   <div class="container d-flex">

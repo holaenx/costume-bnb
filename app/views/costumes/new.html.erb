@@ -1,15 +1,15 @@
 <h1>Create your costume offer</h1>
-<div class="container">
-<%= simple_form_for @costume do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description%>
-  <%= f.input :size, :collection => %w[XS S M L XL XXL] %>
-  <%= f.input :city%>
-  <%= f.input :price %>
-  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-  <%= f.submit  %>
-<% end %>
-</div>
-<div class="container">
-<%= link_to "Back", root_path(@costume) %>
+<div class="container3">
+  <div class="form_container">
+  <%= simple_form_for @costume do |f| %>
+    <%= f.input :name %>
+    <%= f.input :description%>
+    <%= f.input :size, :collection => %w[XS S M L XL XXL] %>
+    <%= f.input :city%>
+    <%= f.input :price %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+    <%= f.submit 'Create costume', :class => 'btn btn-ghost' %>
+  <% end %>
+  <%= link_to "Back", root_path(@costume), :class => "btn btn-ghost"  %>
+  </div>
 </div>

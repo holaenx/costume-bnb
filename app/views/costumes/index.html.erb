@@ -1,21 +1,26 @@
-<h1>Costumes a Marseille</h1>
+<h1><strong>Every Costume YOU'll ever need !</strong></h1>
 <div style="width: 100%; height: 600px;"
   data-controller="map"
   data-map-markers-value="<%= @markers.to_json %>"
   data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
-<div class="container">
+<div class="container2">
    <% @costumes.each do |costume| %>
       <div class="cards__index">
+
             <% if costume.photos.attached? %>
-              <%= cl_image_tag costume.photos.first.key, width: 250, height: 300, crop: :fit %>
+              <%= cl_image_tag costume.photos.first.key, class: "card-image"%>
             <% end %>
-              <div class="card-infos">
-                <h2><%= link_to costume.name, costume_path(costume) %></h2>
-                <p> <%= costume.description %> </p>
-                <h3 class="card-pricing">Price: <%= costume.price %> €/day</h3>
-                <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-user avatar-bordered" />
+              <div class="card__home">
+                <div class="descriname">
+                  <h2><%= link_to costume.name, costume_path(costume) %></h2>
+                  <p> <%= costume.description %> </p>
+                </div>
+                <div class="avaprice">
+                  <h3 class="card-pricing">Price: <%= costume.price %> €/day</h3>
+                  <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-user avatar-bordered" />
               </div>
-      </div>
+            </div>
+        </div>
       <% end %>
 </div>

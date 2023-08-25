@@ -4,15 +4,17 @@
     <p>Costumes BNB, THE website to rent a cool costume.</p>
   </div>
 </div>
-    <div class="search d-flex">
-        <%= link_to "Create your costume offer", new_costume_path, :class => "btn btn-ghost" %>
-        <%= simple_form_for :search, url: costumes_path, method: :get do |f| %>
+    <div class="search d-flex justify-content-between">
+<%= link_to "Create your costume offer", new_costume_path, :class => "btn btn-ghost" %>
+       <div class="search-placement">
+        <%= simple_form_for :search, url: root_path, method: :get do |f| %>
         <div class="search-form-control form-group">
-            <input class="form-control string required" type="text" name="search[query]" id="search_query" />
+            <input class="form-control string required" type="text" name="query" id="" />
             <% end %>
-            <button name="button" type="submit" class="btn btn-flat">
+            <button type="submit" class="btn btn-flat">
               <i class="fas fa-search"></i> Search
             </button>
+          </div>
         </div>
       </div>
 <div class="container2">
@@ -23,7 +25,6 @@
               <div class="descriname">
                   <h2><%= link_to costume.name, costume_path(costume) %></h2>
                   <p> <%= costume.description %> </p>
-              </div>
               <div class="avaprice">
                 <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-user avatar-bordered" />
                 <h2 class="card-pricing">Price: <%= costume.price %> €/day</h2>
